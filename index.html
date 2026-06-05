@@ -11,18 +11,18 @@
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
     :root {
-      --primary:      #00e5ff;
-      --primary-dim:  rgba(0,229,255,0.15);
-      --secondary:    #bf00ff;
-      --accent:       #ff2d78;
+      --primary:      #00d97e;
+      --primary-dim:  rgba(0,217,126,0.15);
+      --secondary:    #ff8c00;
+      --accent:       #a78bfa;
       --green:        #00ff9d;
-      --dark:         #06000f;
-      --dark-2:       #0d0520;
+      --dark:         #060c08;
+      --dark-2:       #0c1a10;
       --card:         rgba(255,255,255,0.035);
-      --border:       rgba(0,229,255,0.18);
-      --border-hover: rgba(0,229,255,0.55);
-      --text:         #dde8f0;
-      --muted:        #7a8fa6;
+      --border:       rgba(0,217,126,0.2);
+      --border-hover: rgba(0,217,126,0.6);
+      --text:         #ddeee6;
+      --muted:        #6a8a76;
       --light:        #ffffff;
       --font-sans:    'Space Grotesk', sans-serif;
       --font-mono:    'JetBrains Mono', monospace;
@@ -106,9 +106,9 @@
       display: flex; align-items: center; justify-content: center;
       position: relative; overflow: hidden;
       background:
-        radial-gradient(ellipse 55% 50% at 5% 60%, rgba(0,229,255,0.1), transparent),
-        radial-gradient(ellipse 45% 40% at 95% 20%, rgba(191,0,255,0.1), transparent),
-        radial-gradient(ellipse 35% 30% at 50% 90%, rgba(255,45,120,0.07), transparent),
+        radial-gradient(ellipse 55% 50% at 5% 60%, rgba(0,217,126,0.1), transparent),
+        radial-gradient(ellipse 45% 40% at 95% 20%, rgba(255,140,0,0.1), transparent),
+        radial-gradient(ellipse 35% 30% at 50% 90%, rgba(167,139,250,0.07), transparent),
         var(--dark);
     }
     #matrix-canvas {
@@ -120,12 +120,12 @@
 
     .hero-badge {
       display: inline-flex; align-items: center; gap: 8px;
-      background: rgba(0,229,255,0.06);
-      border: 1px solid rgba(0,229,255,0.2);
+      background: rgba(0,217,126,0.06);
+      border: 1px solid rgba(0,217,126,0.25);
       border-radius: 50px; padding: 8px 20px;
       font-family: var(--font-mono); font-size: 0.76rem;
-      color: var(--primary); margin-top: 22px; margin-bottom: 4px;
-      animation: fadeInUp 0.6s ease 0.15s both;
+      color: var(--primary); margin-bottom: 28px;
+      animation: fadeInUp 0.6s ease;
     }
     .ai-label {
       font-size: clamp(1.2rem, 2.5vw, 1.6rem);
@@ -154,11 +154,11 @@
       animation: fadeInUp 0.8s ease 0.1s both;
     }
     .hero-name .highlight {
-      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 60%, var(--accent) 100%);
+      background: linear-gradient(135deg, var(--primary) 0%, #00ffaa 40%, var(--secondary) 100%);
       -webkit-background-clip: text; -webkit-text-fill-color: transparent;
       background-clip: text;
       text-shadow: none;
-      filter: drop-shadow(0 0 20px rgba(0,229,255,0.3));
+      filter: drop-shadow(0 0 20px rgba(0,217,126,0.4));
     }
 
     .typewriter-wrapper {
@@ -612,13 +612,13 @@
 <section id="home" class="hero">
   <canvas id="matrix-canvas"></canvas>
   <div class="hero-content">
+    <div class="hero-badge">
+      <div class="dot"></div>
+      Open to Work · Boston, MA
+    </div>
     <h1 class="hero-name">
       Shruti<br><span class="highlight">Dixit</span>
     </h1>
-    <div class="hero-badge">
-      <div class="dot"></div>
-      Available · Boston, MA
-    </div>
     <div class="typewriter-wrapper">
       <span class="typewriter-prefix">$</span>
       <span id="typewriter-text"></span>
@@ -756,7 +756,7 @@
 <section id="skills">
   <div class="section-wrapper">
     <p class="section-label reveal">What I Work With</p>
-    <h2 class="section-title reveal">Tech <span class="accent">Stack</span> <span class="ai-label">+ AI</span></h2>
+    <h2 class="section-title reveal">Tech <span class="accent">Stack</span></h2>
     <div class="skills-container">
 
       <div class="skill-category reveal">
@@ -1121,9 +1121,9 @@
   let drops = Array(cols).fill(1);
 
   setInterval(() => {
-    ctx.fillStyle = 'rgba(6,0,15,0.05)';
+    ctx.fillStyle = 'rgba(6,12,8,0.05)';
     ctx.fillRect(0, 0, canvas.width, canvas.height);
-    ctx.fillStyle = '#00e5ff';
+    ctx.fillStyle = '#00d97e';
     ctx.font = '13px JetBrains Mono, monospace';
     cols = Math.floor(canvas.width / 14);
     if (drops.length < cols) drops.push(...Array(cols - drops.length).fill(1));
